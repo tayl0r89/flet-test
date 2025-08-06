@@ -30,7 +30,7 @@ jobs:
 
       - name: build
         id: build
-        run: uv run flet build web
+        run: uv run flet build web --route-url-strategy hash
 
       - name: Upload pages site
         id: upload
