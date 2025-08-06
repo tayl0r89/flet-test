@@ -32,15 +32,15 @@ jobs:
         id: build
         run: uv run flet build web --route-url-strategy hash --base-url flet-test
 
-      - name: publish
-        id: publish
-        run: uv run flet publish --route-url-strategy hash --base-url flet-test
+      # - name: publish
+      #   id: publish
+      #   run: uv run flet publish --route-url-strategy hash --base-url flet-test
 
       - name: Upload pages site
         id: upload
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
         with:
-          path: dist
+          path: build/web
 
       - name: Deploy to GitHub Pages
         id: deployment
